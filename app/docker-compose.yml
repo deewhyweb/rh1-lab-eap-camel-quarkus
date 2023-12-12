@@ -1,10 +1,11 @@
 version: '3.1'
 services:
   db:
-    image: mysql
+    image: docker.io/library/postgres
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: books
+      POSTGRES_USER: postgresUser
+      POSTGRES_PASSWORD: postgresPW
+      POSTGRES_DB: postgresDB
     ports:
-      - "3306:3306"
+      - "5432:5432"

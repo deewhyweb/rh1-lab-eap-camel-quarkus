@@ -16,6 +16,9 @@
 --
 
 -- You can use this file to load seed data into the database using SQL statements
-insert into Package (id, subscriberId, amount) values ("i-001", 0, 16.00)
-insert into Package (id, subscriberId, amount) values ("i-002", 0, 32.00) 
-insert into Package (id, subscriberId, amount) values ("i-018", 0, 200.00)  
+INSERT INTO package("id", "subscriberid", "amount") VALUES ('i-001', 0, 16.00);
+INSERT INTO package("id", "subscriberid", "amount") VALUES ('i-002', 0, 32.00);
+INSERT INTO package("id", "subscriberid", "amount") VALUES ('i-018', 0, 200.00);  
+INSERT INTO package("id", "subscriberid", "amount") VALUES ('i-003', 1, 27.00);
+INSERT INTO package("id", "subscriberid", "amount") VALUES ('i-019', 1, 41.00);
+INSERT INTO package("id", "subscriberid", "amount") VALUES ('i-006', 1, 90.00); 

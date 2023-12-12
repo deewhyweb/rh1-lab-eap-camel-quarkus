@@ -35,11 +35,11 @@ public class PackageRepository {
     @PersistenceContext
     private EntityManager em;
 
-    public List<PackageItem> findAllBySubscriberId(Long subscriberId) {
+    public List<PackageItem> findAllBySubscriberid(Long subscriberid) {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Tuple> criteria = cb.createQuery(Tuple.class);
         Root<Package> pack = criteria.from(Package.class);
-        criteria.multiselect(pack.get("id"), pack.get("amount")).where(cb.equal(pack.get("subscriberId"), subscriberId));
+        criteria.multiselect(pack.get("id"), pack.get("amount")).where(cb.equal(pack.get("subscriberid"), subscriberid));
         List<Tuple> resultList = em.createQuery(criteria).getResultList();
         List<PackageItem> packageItems = new ArrayList<PackageItem>();
         resultList.forEach(tuple -> {

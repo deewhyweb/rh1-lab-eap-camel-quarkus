@@ -55,12 +55,8 @@ public class SubscriberResourceRESTService {
     @Inject
     private PackageRepository repository;
 
-
-
-
     /**
-     * Creates a new member from the values provided. Performs validation, and will return a JAX-RS response with either 200 ok,
-     * or with a map of fields, and related errors.
+     * Finds subscriber by Id.  Returns subscription object.
      */
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
@@ -71,7 +67,7 @@ public class SubscriberResourceRESTService {
         result.subscriptions.period = new Period();
         result.subscriptions.period.end="01-01-2024";
         result.subscriptions.period.start="01-01-2023";
-        result.subscriptions.packages = repository.findAllBySubscriberId(subscriber.id);
+        result.subscriptions.packages = repository.findAllBySubscriberid(subscriber.id);
         if (result.subscriptions.packages == null) {
             throw new WebApplicationException(Response.Status.NOT_FOUND);
         }

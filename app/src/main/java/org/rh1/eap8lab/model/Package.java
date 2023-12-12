@@ -33,7 +33,7 @@ public class Package implements Serializable {
     @Id
     private String id;
 
-    private Long subscriberId;
+    private Long subscriberid;
 
     private Long amount;
 
@@ -42,7 +42,7 @@ public class Package implements Serializable {
     }
 
     public Long getSubscriberId() {
-        return subscriberId;
+        return subscriberid;
     }
 
     public void setId(String id) {
