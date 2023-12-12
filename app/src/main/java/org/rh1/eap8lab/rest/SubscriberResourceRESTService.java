@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jboss.as.quickstarts.kitchensink.rest;
+package org.rh1.eap8lab.rest;
 
 // import java.util.HashMap;
 // import java.util.HashSet;
@@ -36,12 +36,12 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import org.jboss.as.quickstarts.kitchensink.data.PackageRepository;
-// import org.jboss.as.quickstarts.kitchensink.model.Member;
-import org.jboss.as.quickstarts.kitchensink.util.Period;
-import org.jboss.as.quickstarts.kitchensink.util.Result;
-import org.jboss.as.quickstarts.kitchensink.util.Subscription;
-import org.jboss.as.quickstarts.kitchensink.model.Subscriber;
+import org.rh1.eap8lab.data.PackageRepository;
+// import org.rh1.eap8lab.model.Member;
+import org.rh1.eap8lab.util.Period;
+import org.rh1.eap8lab.util.Result;
+import org.rh1.eap8lab.util.Subscription;
+import org.rh1.eap8lab.model.Subscriber;
 
 /**
  * JAX-RS Example

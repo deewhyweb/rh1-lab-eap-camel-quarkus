@@ -15,15 +15,12 @@
  * limitations under the License.
  */
 
-package org.jboss.as.quickstarts.kitchensink.util;
+package org.rh1.eap8lab.util;
 
-import java.util.List;
+public class PackageItem {
 
+    public String id;
 
-public class Subscription {
-
-    public Period period;
-
-    public List<PackageItem> packages;
+    public Long amount;
 
 }

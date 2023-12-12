@@ -14,10 +14,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jboss.as.quickstarts.kitchensink.util;
+package org.rh1.eap8lab.rest;
 
-public class Period {
-    public String end;
-    public String start;
+import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.core.Application;
 
+/**
+ * A class extending {@link Application} and annotated with @ApplicationPath is the Jakarta EE "no XML" approach to activating
+ * JAX-RS.
+ * <p>
+ * <p>
+ * Resources are served relative to the servlet path specified in the {@link ApplicationPath} annotation.
+ * </p>
+ */
+@ApplicationPath("/")
+public class JaxRsActivator extends Application {
+    /* class body intentionally left blank */
 }

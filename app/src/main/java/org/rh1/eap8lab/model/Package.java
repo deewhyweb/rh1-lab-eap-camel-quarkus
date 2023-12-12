@@ -14,13 +14,42 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.rh1.eap8lab.model;
 
-package org.jboss.as.quickstarts.kitchensink.util;
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+import javax.xml.bind.annotation.XmlRootElement;
 
-public class PackageItem {
 
-    public String id;
+@SuppressWarnings("serial")
+@Entity
+@XmlRootElement
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = "id"))
+public class Package implements Serializable {
 
-    public Long amount;
+    @Id
+    private String id;
 
+    private Long subscriberId;
+
+    private Long amount;
+
+    public String getId() {
+        return id;
+    }
+
+    public Long getSubscriberId() {
+        return subscriberId;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Long getAmount() {
+        return amount;
+    }
 }

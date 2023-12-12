@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jboss.as.quickstarts.kitchensink.data;
+package org.rh1.eap8lab.data;
 
 import javax.enterprise.context.ApplicationScoped;
 // import javax.inject.Inject;
@@ -26,9 +26,9 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.List;
 import java.util.ArrayList;
-import org.jboss.as.quickstarts.kitchensink.util.PackageItem;
+import org.rh1.eap8lab.util.PackageItem;
 
-import org.jboss.as.quickstarts.kitchensink.model.Package;
+import org.rh1.eap8lab.model.Package;
 
 @ApplicationScoped
 public class PackageRepository {
@@ -40,10 +40,6 @@ public class PackageRepository {
         CriteriaQuery<Tuple> criteria = cb.createQuery(Tuple.class);
         Root<Package> pack = criteria.from(Package.class);
         criteria.multiselect(pack.get("id"), pack.get("amount")).where(cb.equal(pack.get("subscriberId"), subscriberId));
-        // Swap criteria statements if you would like to try out type-safe criteria queries, a new
-        // feature in JPA 2.0
-        // criteria.select(member).orderBy(cb.asc(member.get(Member_.name)));
-        //criteria.select(pack).where(cb.equal(pack.get("subscriberId"), subscriberId));
         List<Tuple> resultList = em.createQuery(criteria).getResultList();
         List<PackageItem> packageItems = new ArrayList<PackageItem>();
         resultList.forEach(tuple -> {
