@@ -32,42 +32,6 @@ components:
         - /checode/entrypoint-volume.sh
       cpuLimit: 500m
       cpuRequest: 30m
-      # endpoints:
-      #   - attributes:
-      #       contributed-by: che-code.eclipse.org
-      #       cookiesAuthEnabled: true
-      #       discoverable: false
-      #       type: main
-      #       urlRewriteSupported: true
-      #     exposure: public
-      #     name: che-code
-      #     protocol: https
-      #     secure: false
-      #     targetPort: 3100
-        # - attributes:
-        #     contributed-by: che-code.eclipse.org
-        #     discoverable: false
-        #     urlRewriteSupported: false
-        #   exposure: public
-        #   name: code-redirect-1
-        #   protocol: http
-        #   targetPort: 13131
-        # - attributes:
-        #     contributed-by: che-code.eclipse.org
-        #     discoverable: false
-        #     urlRewriteSupported: false
-        #   exposure: public
-        #   name: code-redirect-2
-        #   protocol: http
-        #   targetPort: 13132
-        # - attributes:
-        #     contributed-by: che-code.eclipse.org
-        #     discoverable: false
-        #     urlRewriteSupported: false
-        #   exposure: public
-        #   name: code-redirect-3
-        #   protocol: http
-        #   targetPort: 13133
       env:
         - name: CHE_DASHBOARD_URL
           value: 'https://devspaces.apps.cluster-p9dj5.p9dj5.sandbox211.opentlc.com'
@@ -84,4 +48,13 @@ components:
       volumeMounts:
         - name: checode
           path: /checode
-    name: universal-developer-image
+    name: tools
+events:
+  postStart:
+    - set-java-17
+
+commands:
+  - id: set-java-17
+    exec:
+      commandLine: source ~/.bashrc && sdk default java 17.0.3-tem
+      component: tools
