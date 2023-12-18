@@ -32,18 +32,18 @@ components:
         - /checode/entrypoint-volume.sh
       cpuLimit: 500m
       cpuRequest: 30m
-      endpoints:
-        - attributes:
-            contributed-by: che-code.eclipse.org
-            cookiesAuthEnabled: true
-            discoverable: false
-            type: main
-            urlRewriteSupported: true
-          exposure: public
-          name: che-code
-          protocol: https
-          secure: false
-          targetPort: 3100
+      # endpoints:
+      #   - attributes:
+      #       contributed-by: che-code.eclipse.org
+      #       cookiesAuthEnabled: true
+      #       discoverable: false
+      #       type: main
+      #       urlRewriteSupported: true
+      #     exposure: public
+      #     name: che-code
+      #     protocol: https
+      #     secure: false
+      #     targetPort: 3100
         # - attributes:
         #     contributed-by: che-code.eclipse.org
         #     discoverable: false
