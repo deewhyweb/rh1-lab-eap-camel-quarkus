@@ -14,6 +14,13 @@ attributes:
   #     factory:
   #       params: >-
   #         storageType=per-user&url=https://devspaces.apps.cluster-p9dj5.p9dj5.sandbox211.opentlc.com/dashboard/devfile-registry/devfiles/empty.yaml
+projects:
+  - name: camel-lab
+    git:
+      remotes:
+        origin: "https://github.com/redhat-integration-resources/migration-fuse-camel-quarkus.git"
+      checkoutFrom:
+        revision: main
 components:
   - attributes:
       che-code.eclipse.org/contribute-cpuLimit: true
