@@ -6,14 +6,6 @@ attributes:
     name: devworkspace-config
     namespace: openshift-operators
   controller.devfile.io/storage-type: per-user
-  # dw.metadata.annotations:
-  #   che.eclipse.org/devfile-source: |
-  #     url:
-  #       location: >-
-  #         https://devspaces.apps.cluster-p9dj5.p9dj5.sandbox211.opentlc.com/dashboard/devfile-registry/devfiles/empty.yaml
-  #     factory:
-  #       params: >-
-  #         storageType=per-user&url=https://devspaces.apps.cluster-p9dj5.p9dj5.sandbox211.opentlc.com/dashboard/devfile-registry/devfiles/empty.yaml
 components:
   - attributes:
       che-code.eclipse.org/contribute-cpuLimit: true
@@ -49,12 +41,11 @@ components:
         - name: checode
           path: /checode
     name: tools
-# events:
-#   postStart:
-#     - set-java-17
-
-# commands:
-#   - id: set-java-17
-#     exec:
-#       commandLine: source ~/.bashrc && sdk default java 17.0.3-tem
-#       component: tools
+events:
+  postStart:
+    - set-java-17         
+commands:
+  - id: set-java-17
+    exec:
+      commandLine: source ~/.bashrc && sdk default java 17.0.3-tem
+      component: tools
