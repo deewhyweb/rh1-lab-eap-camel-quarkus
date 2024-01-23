@@ -41,11 +41,11 @@ components:
         - name: checode
           path: /checode
     name: tools
-events:
-  postStart:
-    - set-java-17         
-commands:
-  - id: set-java-17
-    exec:
-      commandLine: source ~/.bashrc && sdk default java 17.0.3-tem
-      component: tools
+# events:
+#   postStart:
+#     - set-java-17         
+# commands:
+#   - id: set-java-17
+#     exec:
+#       commandLine: source ~/.bashrc && sdk default java 17.0.3-tem
+#       component: tools
