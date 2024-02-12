@@ -9,27 +9,27 @@
 
     <!-- MAIN ROUTE -->
     <route id="main">
-      <!-- COPY/PASTE DEFINITION HERE -->
+      <!-- COPY/PASTE ROUTE DEFINITION HERE -->
     </route>
     
     <!-- RESOLVES CALL TO BACKEND 1 -->
     <route id="call-system1">
       <from uri="direct:call-system1"/>
-      <!-- COPY/PASTE DEFINITION HERE -->
+      <!-- COPY/PASTE SYSTEM1 DEFINITION HERE -->
       <log message="dummy call-system1 (to be removed)"/>
     </route>
 
     <!-- RESOLVES CALL TO BACKEND 2 -->
     <route id="call-system2">
       <from uri="direct:call-system2"/>
-      <!-- COPY/PASTE DEFINITION HERE -->
+      <!-- COPY/PASTE SYSTEM2 DEFINITION HERE -->
       <log message="dummy call-system2 (to be removed)"/>
     </route>
 
     <!-- MAPS JSON to SOAP request -->
     <route id="json2soap">
       <from uri="direct:json2soap"/>
-      <!-- COPY/PASTE DEFINITION HERE -->
+      <!-- COPY/PASTE SOAP DEFINITION HERE -->
       <log message="dummy"/>
     </route>
 
@@ -37,7 +37,7 @@
     <route id="mapResponse">
       <from uri="direct:mapResponse"/>
 
-      <!-- COPY/PASTE DEFINITION HERE -->
+      <!-- COPY/PASTE RESPONSE DEFINITION HERE -->
 
       <!-- REMOVE DUMMY RESPONSE -->
       <to uri="language:constant:resource:classpath:/data/dummy.json"/>
